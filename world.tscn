@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://bakrurrxciaqg"]
+[gd_scene load_steps=81 format=4 uid="uid://bakrurrxciaqg"]
 
 [ext_resource type="Texture2D" uid="uid://dc0y0ji650oku" path="res://Assets/tilesets/grass.png" id="1_fj7yv"]
 [ext_resource type="Texture2D" uid="uid://baiyjykjggj6s" path="res://Assets/tilesets/Pohon_jalanan.png" id="2_036b0"]
@@ -981,7 +981,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"serang_bawah",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1003,6 +1003,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gbfbk"]
 radius = 8.02773
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wse8f"]
+radius = 19.3793
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k3n1d"]
 texture = ExtResource("7_wse8f")
@@ -1087,6 +1090,17 @@ scale = Vector2(1.7, 1.7)
 position = Vector2(970, 208)
 scale = Vector2(1.7, 1.7)
 
+[node name="Zombie4" parent="." instance=ExtResource("6_gbfbk")]
+position = Vector2(906, 256)
+scale = Vector2(1.7, 1.7)
+
+[node name="Zombie5" parent="." instance=ExtResource("6_gbfbk")]
+position = Vector2(905, 214)
+
+[node name="Zombie6" parent="." instance=ExtResource("6_gbfbk")]
+position = Vector2(966, 262)
+scale = Vector2(1.5, 1.5)
+
 [node name="Aris" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
 scale = Vector2(1.5, 1.5)
@@ -1096,12 +1110,19 @@ script = ExtResource("2_aqk2v")
 position = Vector2(93.3333, 156)
 scale = Vector2(1.3125, 1.38542)
 sprite_frames = SubResource("SpriteFrames_jas3d")
-animation = &"idle_bawah"
-frame_progress = 0.904078
+animation = &"serang_bawah"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Aris"]
 position = Vector2(94.6667, 177.333)
 shape = SubResource("CircleShape2D_gbfbk")
+
+[node name="AtkBox" type="Area2D" parent="Aris"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aris/AtkBox"]
+y_sort_enabled = true
+position = Vector2(94.6667, 170)
+shape = SubResource("CircleShape2D_wse8f")
+debug_color = Color(0.994007, 0, 0.228904, 0.42)
 
 [node name="Danau" type="TileMapLayer" parent="."]
 scale = Vector2(5, 5)
