@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgu7ywrocbvhy"]
+[gd_scene load_steps=27 format=3 uid="uid://v1jhlyxwtw24"]
 
 [ext_resource type="Script" uid="uid://b5vy1jqlv1qbq" path="res://zombie.gd" id="1_g6hu2"]
 [ext_resource type="Texture2D" uid="uid://chittrmr6xck7" path="res://Assets/characters/early model zombie.png" id="1_mauhj"]
 [ext_resource type="Texture2D" uid="uid://bsq2wq2ccqbgd" path="res://Assets/characters/zombie final.png" id="3_vrb4v"]
+[ext_resource type="Texture2D" uid="uid://djsqo78mamme2" path="res://Assets/characters/atk zombie.png" id="4_ykpkj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6hu2"]
 atlas = ExtResource("1_mauhj")
@@ -39,6 +40,42 @@ region = Rect2(48, 432, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_bep8f"]
 atlas = ExtResource("3_vrb4v")
 region = Rect2(96, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18kch"]
+atlas = ExtResource("4_ykpkj")
+region = Rect2(0, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7cd6"]
+atlas = ExtResource("4_ykpkj")
+region = Rect2(48, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy6xa"]
+atlas = ExtResource("4_ykpkj")
+region = Rect2(96, 384, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1q42"]
+atlas = ExtResource("4_ykpkj")
+region = Rect2(0, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idbyb"]
+atlas = ExtResource("4_ykpkj")
+region = Rect2(48, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o7kl"]
+atlas = ExtResource("4_ykpkj")
+region = Rect2(96, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnq0n"]
+atlas = ExtResource("4_ykpkj")
+region = Rect2(0, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0x2u"]
+atlas = ExtResource("4_ykpkj")
+region = Rect2(48, 336, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf3vq"]
+atlas = ExtResource("4_ykpkj")
+region = Rect2(96, 336, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_djscl"]
 animations = [{
@@ -78,30 +115,81 @@ animations = [{
 "loop": false,
 "name": &"mati",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18kch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7cd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy6xa")
+}],
+"loop": true,
+"name": &"serang_atas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1q42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idbyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o7kl")
+}],
+"loop": true,
+"name": &"serang_bawah",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnq0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0x2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf3vq")
+}],
+"loop": true,
+"name": &"serang_kanan",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g6hu2"]
 radius = 11.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vrb4v"]
-radius = 11.0
+radius = 16.0078
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ykpkj"]
+radius = 14.5086
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(2, 2)
 script = ExtResource("1_g6hu2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_djscl")
-animation = &"mati"
-frame = 2
-frame_progress = 1.0
+animation = &"serang_kanan"
+frame_progress = 0.211678
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 8)
 shape = SubResource("CircleShape2D_g6hu2")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hurtbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(1, 8)
 shape = SubResource("CircleShape2D_vrb4v")
 debug_color = Color(0.984231, 0, 0.345548, 0.42)
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.5, 8)
+shape = SubResource("CircleShape2D_ykpkj")

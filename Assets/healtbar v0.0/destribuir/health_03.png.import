@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcnnf3jof7fan"
-path="res://.godot/imported/Gemini_Generated_Image_nefycxnefycxnefy-removebg-preview.png-3f732ca0dde47d644929410ddfdd98f6.ctex"
+uid="uid://bc5oyqnvciry7"
+path="res://.godot/imported/health_03.png-a565aa098524fa367903803916b03920.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/Gemini_Generated_Image_nefycxnefycxnefy-removebg-preview.png"
-dest_files=["res://.godot/imported/Gemini_Generated_Image_nefycxnefycxnefy-removebg-preview.png-3f732ca0dde47d644929410ddfdd98f6.ctex"]
+source_file="res://Assets/healtbar v0.0/destribuir/health_03.png"
+dest_files=["res://.godot/imported/health_03.png-a565aa098524fa367903803916b03920.ctex"]
 
 [params]
 
