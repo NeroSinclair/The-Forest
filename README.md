@@ -6,9 +6,9 @@ Genre : Hack and slash, Action Roguelike
 
 Recruitments :
 
-GODOT v 4.4 Stable
+- GODOT v 4.4 Stable
 
-Size 6.67 Mb (early Access)
+- Size 6.67 Mb (early Access)
 
 Inspired by : @Arwildo
 
