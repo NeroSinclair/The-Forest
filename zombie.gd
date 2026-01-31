@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var hitbox := $Hitbox # Area untuk melukai Aris
 
 var sudah_mati : bool = false
-var health : int = 5
+var health : int = 3
 var kecepatan = 60.0
 var target_player = null
 var jarak_serang = 35.0

@@ -7,7 +7,7 @@ var vel = Vector2.ZERO
 var arah_terakhir = Vector2.RIGHT
 
 # --- DATA DARAH ---
-var darah = 10
+var darah = 20
 var bisa_kena_damage = true
 
 func _ready():
