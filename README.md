@@ -1,6 +1,6 @@
 Indie simple game
 
-"The Forest Warden"
+"The Forest Zombie"
 
 Genre : Hack and slash, Action Roguelike
 
@@ -8,7 +8,7 @@ Recruitments :
 
 - GODOT v 4.4 Stable
 
-- Size 6.87 Mb (early Access v 2.0)
+- Size 16.1 Mb (early Access v 3.0)
 
 Inspired by : @Arwildo
 
