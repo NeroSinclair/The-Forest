@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var sprite = $AnimatedSprite2D
+
 const KECEPATAN = 130
 var state: State
 var states = {}
@@ -54,6 +56,10 @@ func _on_hurtbox_area_entered(area):
 
 func terima_damage(jumlah):
 	darah -= jumlah
+	# Efek visual flicker merah
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate", Color.RED, 0.1)
+	tween.tween_property(sprite, "modulate", Color.WHITE, 0.1)
 	print("Darah Aris: ", darah)
 	if darah <= 0:
 		mati()

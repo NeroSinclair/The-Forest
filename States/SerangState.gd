@@ -25,10 +25,15 @@ func setup_animasi_serang(arah, animasi):
 	const KECEPATAN_SLIDE = 150
 	player.velocity = arah.normalized() * KECEPATAN_SLIDE
 	
-	# --- PERBAIKAN: Aktifkan AtkBox saat menyerang ---
+	# --- PERBAIKAN UTAMA: Nyalakan AtkBox agar dideteksi Zombie ---
 	if player.has_node("AtkBox"):
-		player.get_node("AtkBox").monitoring = true 
+		# 1. Biar zombie bisa ngelihat area ini
+		player.get_node("AtkBox").monitorable = true
+		# 2. Aktifkan shape-nya (kalau di editor lo set 'Disabled')
+		if player.get_node("AtkBox").has_node("CollisionShape2D"):
+			player.get_node("AtkBox/CollisionShape2D").disabled = false
 	
+	# Mainkan Animasi
 	if arah == Vector2.RIGHT:
 		animasi.play("serang_kanan")
 		animasi.scale.x = 1
@@ -49,7 +54,18 @@ func physics_update(_delta):
 			player.arah_terakhir = arah_baru
 			setup_animasi_serang(player.arah_terakhir, animasi)
 	else:
-		# --- PERBAIKAN: Matikan AtkBox saat berhenti menyerang ---
-		if player.has_node("AtkBox"):
-			player.get_node("AtkBox").monitoring = false
+		# Matikan serangan saat tombol dilepas
+		matikan_serangan()
 		player.change_state("idle")
+
+# Fungsi pengaman agar saat keluar state, hitbox PASTI mati
+func exit():
+	matikan_serangan()
+
+func matikan_serangan():
+	if player.has_node("AtkBox"):
+		# Matikan kemampuan dideteksi
+		player.get_node("AtkBox").monitorable = false
+		# Matikan shape-nya kembali
+		if player.get_node("AtkBox").has_node("CollisionShape2D"):
+			player.get_node("AtkBox/CollisionShape2D").disabled = true
