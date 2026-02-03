@@ -8,7 +8,7 @@ Recruitments :
 
 - GODOT v 4.4 Stable
 
-- Size 18.1 Mb (early Access v 3.1)
+- Size 18.2 Mb (early Access v 3.2)
 
 Inspired by : @Arwildo
 
