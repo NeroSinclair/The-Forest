@@ -7,7 +7,7 @@ Genre : Hack and slash, Action Roguelike
 Recruitments :
 - GODOT v 4.4 Stable
 - Size 18.2 Mb (early Access v 3.2)
-- 
+  
 Inspired by : @Arwildo, @Coco Code
 Credit :
 Song : Melancholic Walk, by @Pix
