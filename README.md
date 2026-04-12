@@ -6,7 +6,7 @@ Genre : Hack and slash, Action Roguelike
 
 Recruitments :
 - GODOT v 4.4 Stable
-- Size 18.2 Mb (early Access v 3.2)
+- Size 57.7 Mb (Beta 4.0)
   
 Inspired by : @Arwildo, @Coco Code
 Credit :
@@ -39,7 +39,7 @@ Patch 3.2
 - Make AtkBox can disable when player is not attack
 Add some area
 
-Patch 4.0
+Patch Beta 4.0
 - Add UI ingame
 - Add player healthbar
 - Add pause meenu
